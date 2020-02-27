@@ -1,9 +1,14 @@
 <template>
     <div class="app-container">
+        <h1 class="title">
+            Trivia Game
+        </h1>
         <div class="field">
             <label class="label">Number of questions?</label>
-            <div class="control">
+            <div class="">
                 <input class="input" type="number" min="10" max="20" placeholder="min 10 - max 20" v-model.number="numberOfQuestions">
+            </div>
+            <div class="">
                 <button v-on:click="StartQuiz" id="btnSubmit" class="button is-primary">Start Quiz</button>
             </div>
         </div>
@@ -32,9 +37,18 @@ export default {
 
 <style scoped>
 .field {
-    text-align: left
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 3em;
 }
 #btnSubmit{
     margin-top: 1em;
+}
+.input {
+    max-width: 10em;
+}
+
+h1 {
+    text-align: center;
 }
 </style>

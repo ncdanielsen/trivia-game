@@ -1,6 +1,6 @@
 <template>
 <nav class="navbar" role="navigation" aria-label="main navigation">
-  <div id="navbarBasicExample" class="navbar-menu">
+  <div class="navbar-menu">
     <div class="navbar-start">
         <router-link class="navbar-item" to='/'>
             Home
@@ -23,5 +23,10 @@ export default {
 
 .navbar-item{
     color: white;
+}
+
+.navbar-menu {
+    margin-left: 9em;
+    margin-right: 9em;
 }
 </style>

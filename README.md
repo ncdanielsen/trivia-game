@@ -1,24 +1,22 @@
 # trivia-game
 
-## Project setup
+## Run this to set the project up
 ```
 npm install
 ```
 
-### Compiles and hot-reloads for development
+### To run the project
 ```
 npm run serve
+
+App should be availabe at http://localhost:8080/
 ```
 
-### Compiles and minifies for production
+### Routes
 ```
-npm run build
-```
+path: "/", Brings you to the main menu.
 
-### Lints and fixes files
-```
-npm run lint
-```
+path: "/game/:numberOfQuestions", Starts up a quiz game with the number of questions specified in the url.
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+path: "/results", Displays the result of the previous quiz. Props have to be passed in, in order to view result.
+```
