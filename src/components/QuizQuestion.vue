@@ -2,15 +2,13 @@
     <div>
         <div class="card">
             <header class="card-header">
-                <p class="card-header-title">
-                    {{quizItem.category}}
-                </p>
+                <p class="card-header-title" v-html="quizItem.category"/>
             </header>
             <body>
-                <div class="content">{{quizItem.question}}</div>
+                <div class="content" v-html="quizItem.question"></div>
                 <ul>
                     <li v-for="(answer, index) of AnswerScrambler(quizItem)" :key="index">
-                        <button class="button" v-on:click="AnswerClicked(answer, quizItem)">{{answer}}</button>
+                        <button class="button" v-on:click="AnswerClicked(answer, quizItem)" v-html="answer"></button>
                     </li>
                 </ul>
             </body>

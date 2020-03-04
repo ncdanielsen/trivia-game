@@ -2,16 +2,13 @@
     <div class="question-result">
         <div class="card">
             <div class="card-content">
-                <div class="content">
-                    {{question.question}}
+                <div class="content" v-html="question.question">
                     <hr>
                     <br>
                 </div>
                 <ul>
                     <li class="" v-for="(answerItem, index) of answerList" :key="index">
-                        <p :class="IsCorrectAnswer(answerItem)">
-                            Option {{index+1}}: {{answerItem}}
-
+                        <p :class="IsCorrectAnswer(answerItem)" v-html="GetAnswerString(answerItem, index)">
                         </p>
                     </li>
                 </ul>
@@ -38,6 +35,9 @@ export default {
                 return 'correct-answer';
             }
             return '';
+        },
+        GetAnswerString(answerItem, index){
+            return String(`Option ${index+1}: ${answerItem}`);
         }
     },
     data() {

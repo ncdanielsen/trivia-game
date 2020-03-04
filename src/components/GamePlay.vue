@@ -27,8 +27,8 @@ export default {
 
         },
         AnsweredQuestion(answer){
+            this.answers.push(answer);
             if(!this.isLastQuestion){
-                this.answers.push(answer);
                 this.NextQuestion();
             }
             else{
@@ -43,9 +43,6 @@ export default {
     },
     created(){
         this.numberOfQuestions = this.$route.params.questionNumber;
-        this.questionCounter = 0;
-        this.score = 0;
-        this.isLastQuestion = false;
 
         axios.get(`https://opentdb.com/api.php?amount=${this.$route.params.questionNumber}`)
         .then(resp => resp.data)
@@ -65,9 +62,9 @@ export default {
         return {
             quizList: [],
             answers: [],
-            questionCounter: Number,
+            questionCounter: 0,
             currentQuestion: Object,
-            isLastQuestion: Boolean,
+            isLastQuestion: false,
             numberOfQuestions: Number
         }
     }
